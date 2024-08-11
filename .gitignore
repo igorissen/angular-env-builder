@@ -1,0 +1,9 @@
+# Jetbrains IDE
+.idea
+
+# Node
+dist
+node_modules
+.env
+environment.ts
+*.tgz

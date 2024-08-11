@@ -1,0 +1,9 @@
+{
+  "builders": {
+    "generate": {
+      "implementation": "./dist/generate-env.js",
+      "schema": "./dist/schema.json",
+      "description": "Generate the \"src/environments/environment.ts\" file based on your environment variables"
+    }
+  }
+}

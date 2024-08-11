@@ -1,0 +1,48 @@
+{
+  "name": "@igorissen/angular-env-builder",
+  "version": "1.0.0",
+  "builders": "builders.json",
+  "scripts": {
+    "build": "npm run prebuild && tsc && npm run postbuild",
+    "postbuild": "cpy --flat src/schema.json dist",
+    "prebuild": "rimraf dist",
+    "test": "vitest"
+  },
+  "files": [
+    "dist",
+    "builders.json"
+  ],
+  "engines": {
+    "node": "20.16.0"
+  },
+  "keywords": [
+    "angular",
+    "builder",
+    "generator",
+    "environment",
+    "env"
+  ],
+  "author": "Ismael Gorissen <ismael.gorissen@gmail.com>",
+  "license": "MIT",
+  "description": "Builder to generate \"src/environments/environment.ts\" file based on your environment variables",
+  "dependencies": {
+    "@angular-devkit/architect": "~0.1801.4",
+    "@angular-devkit/core": "~18.1.4"
+  },
+  "devDependencies": {
+    "@eslint/js": "~9.8.0",
+    "@stylistic/eslint-plugin": "~2.6.1",
+    "@types/node": "~20.14.15",
+    "cpy-cli": "~5.0.0",
+    "eslint": "~9.8.0",
+    "eslint-plugin-simple-import-sort": "~12.1.1",
+    "globals": "~15.9.0",
+    "rimraf": "~6.0.1",
+    "typescript": "~5.5.4",
+    "typescript-eslint": "~8.0.1",
+    "vitest": "~2.0.5"
+  },
+  "peerDependencies": {
+    "dotenv": "~16.4.5"
+  }
+}
