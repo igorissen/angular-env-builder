@@ -1,6 +1,6 @@
 {
   "name": "@igorissen/angular-env-builder",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "builders": "builders.json",
   "scripts": {
     "build": "npm run prebuild && tsc && npm run postbuild",
@@ -12,9 +12,6 @@
     "dist",
     "builders.json"
   ],
-  "engines": {
-    "node": "20.16.0"
-  },
   "keywords": [
     "angular",
     "builder",
@@ -26,21 +23,21 @@
   "license": "MIT",
   "description": "Builder to generate \"src/environments/environment.ts\" file based on your environment variables",
   "dependencies": {
-    "@angular-devkit/architect": "~0.1801.4",
-    "@angular-devkit/core": "~18.1.4"
+    "@angular-devkit/architect": "~0.1902.10",
+    "@angular-devkit/core": "~19.2.10"
   },
   "devDependencies": {
-    "@eslint/js": "~9.8.0",
-    "@stylistic/eslint-plugin": "~2.6.1",
-    "@types/node": "~20.14.15",
+    "@eslint/js": "~9.25.1",
+    "@stylistic/eslint-plugin": "~4.2.0",
+    "@types/node": "~22.15.3",
     "cpy-cli": "~5.0.0",
-    "eslint": "~9.8.0",
+    "eslint": "~9.25.1",
     "eslint-plugin-simple-import-sort": "~12.1.1",
-    "globals": "~15.9.0",
+    "globals": "~16.0.0",
     "rimraf": "~6.0.1",
-    "typescript": "~5.5.4",
-    "typescript-eslint": "~8.0.1",
-    "vitest": "~2.0.5"
+    "typescript": "~5.8.3",
+    "typescript-eslint": "~8.31.1",
+    "vitest": "~3.1.2"
   },
   "peerDependencies": {
     "dotenv": "~16.4.5"
