@@ -12,9 +12,6 @@
     "dist",
     "builders.json"
   ],
-  "engines": {
-    "node": "20.16.0"
-  },
   "keywords": [
     "angular",
     "builder",
