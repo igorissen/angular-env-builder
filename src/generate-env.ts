@@ -27,15 +27,19 @@ function _getEnvObject(variables: Variable[]): object {
   variables.forEach(({envKey, processEnvKey, valueType}) => {
     switch (valueType) {
       case "boolean":
+        // @ts-expect-error dynamic env key assignment
         env[envKey] = process.env[processEnvKey] === 'true';
         break;
       case "number":
+        // @ts-expect-error dynamic env key assignment
         env[envKey] = _toNumber(process.env[processEnvKey]);
         break;
       case "object":
+        // @ts-expect-error dynamic env key assignment
         env[envKey] = _parseJson(process.env[processEnvKey]);
         break;
       default:
+        // @ts-expect-error dynamic env key assignment
         env[envKey] = process.env[processEnvKey];
     }
   })
