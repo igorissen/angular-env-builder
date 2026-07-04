@@ -1,12 +1,12 @@
 import 'dotenv/config'
-import {BuilderContext, BuilderOutput, createBuilder} from "@angular-devkit/architect";
+import {BuilderOutput, createBuilder} from "@angular-devkit/architect";
 import {access, mkdir, writeFile} from 'node:fs/promises';
 import {dirname} from 'node:path';
 import {Options, Variable} from "./types";
 
 export default createBuilder(generateEnvironmentFileBuilder);
 
-async function generateEnvironmentFileBuilder(options: Options, context: BuilderContext): Promise<BuilderOutput> {
+async function generateEnvironmentFileBuilder(options: Options): Promise<BuilderOutput> {
   try {
     const destination = options.destination ? options.destination : 'src/environments/environment.ts';
     const env = _getEnvObject(options.variables);
