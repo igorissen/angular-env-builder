@@ -23,7 +23,7 @@
   "license": "MIT",
   "description": "Builder to generate \"src/environments/environment.ts\" file based on your environment variables",
   "dependencies": {
-    "@angular-devkit/architect": "~0.1902.10",
+    "@angular-devkit/architect": "~0.2200.5",
     "@angular-devkit/core": "~22.0.5"
   },
   "devDependencies": {
