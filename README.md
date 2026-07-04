@@ -10,7 +10,7 @@ Custom angular builder to generate "src/environments/environment.ts" file based 
 npm install --save-dev @igorissen/angular-env-builder
 ```
 
-You must install the dotenv package in version 16.4.x as it is a peer dependency.
+You must install the dotenv package in version 17.4.2 as it is a peer dependency.
 
 ```bash
 npm install --save-dev dotenv@16.4
