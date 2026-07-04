@@ -7,6 +7,7 @@ export type Variable = {
 };
 
 export interface Options extends JsonObject {
+  // @ts-expect-error destination is optional
   destination?: string;
   variables: Variable[];
 }

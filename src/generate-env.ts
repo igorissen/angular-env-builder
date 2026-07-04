@@ -1,12 +1,12 @@
 import 'dotenv/config'
-import {BuilderContext, BuilderOutput, createBuilder} from "@angular-devkit/architect";
+import {BuilderOutput, createBuilder} from "@angular-devkit/architect";
 import {access, mkdir, writeFile} from 'node:fs/promises';
 import {dirname} from 'node:path';
 import {Options, Variable} from "./types";
 
 export default createBuilder(generateEnvironmentFileBuilder);
 
-async function generateEnvironmentFileBuilder(options: Options, context: BuilderContext): Promise<BuilderOutput> {
+async function generateEnvironmentFileBuilder(options: Options): Promise<BuilderOutput> {
   try {
     const destination = options.destination ? options.destination : 'src/environments/environment.ts';
     const env = _getEnvObject(options.variables);
@@ -27,15 +27,19 @@ function _getEnvObject(variables: Variable[]): object {
   variables.forEach(({envKey, processEnvKey, valueType}) => {
     switch (valueType) {
       case "boolean":
+        // @ts-expect-error dynamic env key assignment
         env[envKey] = process.env[processEnvKey] === 'true';
         break;
       case "number":
+        // @ts-expect-error dynamic env key assignment
         env[envKey] = _toNumber(process.env[processEnvKey]);
         break;
       case "object":
+        // @ts-expect-error dynamic env key assignment
         env[envKey] = _parseJson(process.env[processEnvKey]);
         break;
       default:
+        // @ts-expect-error dynamic env key assignment
         env[envKey] = process.env[processEnvKey];
     }
   })

@@ -2,10 +2,10 @@
   "compileOnSave": false,
   "compilerOptions": {
     "allowSyntheticDefaultImports": true,
-    "baseUrl": "tsconfig",
     "declaration": true,
     "module": "nodenext",
     "moduleResolution": "nodenext",
+    "rootDir": "./src",
     "outDir": "dist",
     "sourceMap": true,
     "target": "es6",
